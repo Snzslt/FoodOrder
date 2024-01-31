@@ -33,6 +33,7 @@ function cartReducer(state, action){
         );
         const existingCartItem = state.items[existingCartItemIndex];
         //will remove item if is the last one in the shopping cart
+    
         const updatedItems = [...state.items];
         if(existingCartItem.quantity === 1){
             
@@ -40,7 +41,7 @@ function cartReducer(state, action){
         }
         else{
             const updatedItem = {
-                ...existingItem, 
+                ...existingCartItem, 
                 quantity: existingCartItem.quantity - 1,
             };
             updatedItems[existingCartItemIndex] = updatedItem;
